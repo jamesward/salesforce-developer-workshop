@@ -68,6 +68,6 @@ the next module, you will enhance SpeakerForm to support the upload of the speak
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
 <a href="Creating-Triggers.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="Creating-a-Controller-Extension.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="Using-JavaScript-in-Visualforce-Pages.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
