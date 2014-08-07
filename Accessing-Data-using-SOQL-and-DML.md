@@ -60,7 +60,7 @@ and DML. In the next modules, you'll use SOQL and DML statements in Apex classes
 2. Execute the following statements to update a session:
 
     ```
-    Session__c session = [SELECT Id FROM Session__c WHERE NAME='Advanced Apex'];
+    Session__c session = [SELECT Id FROM Session__c WHERE NAME='Advanced Apex' LIMIT 1];
     session.Level__c = 'Intermediate';
     update session;
     ```
