@@ -23,7 +23,7 @@ title: Using Heroku Connect
 
 5. Commit your files:
 
-        git commit -m init
+        git commit -m "init"
 
 6. Create a new app on Heroku:
 
