@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Salesforce Developer Workshop</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="James Ward">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+            .reveal section img {
+                border: none;
+            }
+        </style>
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+                <section>
+                    <h3>Salesforce Developer Workshop</h3>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Metadata-Driven Data Model</h3>
+
+                        <ul>
+                            <li class="fragment">Salesforce is a cloud database</li>
+                            <li class="fragment">Metadata defines the data model</li>
+                            <li class="fragment">Metadata is changed via point & click or definition files</li>
+                            <li class="fragment">Versioned, Packageable, and Testable</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Rich Data Model</h3>
+
+                        <ul>
+                            <li class="fragment">Custom Objects (SObjects)</li>
+                            <li class="fragment">Custom Fields</li>
+                            <li class="fragment">Validation Logic</li>
+                            <li class="fragment">Field-level Security</li>
+                            <li class="fragment">Relationships & Pick-Lists</li>
+                            <li class="fragment">Derived Values</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Stuff You Automatically Get For Free</h3>
+
+                        <ul>
+                            <li class="fragment">REST API</li>
+                            <li class="fragment">Basic CRUD-ish UI</li>
+                            <li class="fragment">Mobile CRUD-ish UI</li>
+                            <li class="fragment">Indexed Search</li>
+                            <li class="fragment">Out-of-the-box Basic SObjects</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Field Types</h3>
+
+                        <ul>
+                            <li>Auto Number</li>
+                            <li>Formula</li>
+                            <li>Roll-Up Summary</li>
+                            <li>Lookup Relationshi</li>
+                            <li>Master-Detail Relationship</li>
+                            <li>Checkbox</li>
+                            <li>Currency</li>
+                            <li>Date & Date/Time</li>
+                            <li>Email</li>
+                            <li>Geolocation</li>
+                            <li>Number & Percent</li>
+                            <li>Phone</li>
+                            <li>Picklist & Picklist Multi-Select</li>
+                            <li>Text, Text Area, Encrypted Text</li>
+                            <li>URL</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Built-in Application Runtime</h3>
+
+                        <ul>
+                            <li class="fragment">Apex: Programmable Logic for Triggers, Visualforce Controllers, &amp; Jobs</li>
+                            <li class="fragment">Visualforce: Programmable UIs</li>
+                            <li class="fragment">SOQL: Programmable UIs</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Apex</h3>
+
+                        <ul>
+                            <li class="fragment">Java-like syntax</li>
+                            <li class="fragment">Versionable, Packageable, and Testable</li>
+                            <li class="fragment">Eclipse & Web-based Code editors</li>
+                        </ul>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Apex
+
+                            ```
+                            public class Foo {
+
+                                public void something(String name) {
+                                    System.debug('hello, world');
+                                    System.debug('hello, ' + name);
+                                }
+
+                            }
+                            ```
+                        </script>
+                    </section>
+                    <section>
+                        <h3>SOQL &amp; DML</h3>
+
+                        <ul>
+                            <li class="fragment">SOQL: SQL-like Syntax</li>
+                            <li class="fragment">DML: JPA-like Persistence</li>
+                            <li class="fragment">Used in Apex</li>
+                            <li class="fragment">Developer Console writing & testing</li>
+                        </ul>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### SOQL
+
+                            ```
+                            List<Opportunity> opps = [SELECT Id, Name FROM Opportunity];
+                            ```
+
+                            ### DML
+
+                            ```
+                            Opportunity opp = new Opporunity(Name='Widget Deal');
+                            insert opp;
+                            ```
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Triggers</h3>
+
+                        <ul>
+                            <li class="fragment">SObject Event-based (before insert, after update, etc)</li>
+                            <li class="fragment">Written in Apex</li>
+                            <li class="fragment">Run on Salesforce</li>
+                        </ul>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Trigger
+
+                            ```
+                            trigger FooTrigger on Opportunity (after insert) {
+
+                                for (Opportunity newItem : trigger.new) {
+                                    System.debug(newItem);
+                                }
+
+                            }
+                            ```
+                        </script>
+                    </section>
+                    <section>
+                        <h3>Visualforce</h3>
+
+                        <ul>
+                            <li class="fragment">JSP-like Syntax</li>
+                            <li class="fragment">Server-side MVC</li>
+                            <li class="fragment">Runs on Salesforce</li>
+                            <li class="fragment">Any JavaScript / CSS You Want</li>
+                            <li class="fragment">JavaScript Remoting</li>
+                        </ul>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ### Visualforce
+
+                            ```
+                            <apex:page standardController="Speaker__c">
+                                <apex:form >
+                                    <apex:pageBlock title="Edit Speaker">
+                                        <apex:pageBlockSection columns="1">
+                                            <apex:inputField value="{!Speaker__c.First_Name__c}"/>
+                                            <apex:inputField value="{!Speaker__c.Last_Name__c}"/>
+                                            <apex:inputField value="{!Speaker__c.Email__c}"/>
+                                        </apex:pageBlockSection>
+                                        <apex:pageBlockButtons >
+                                            <apex:commandButton action="{!save}" value="Save"/>
+                                        </apex:pageBlockButtons>
+                                    </apex:pageBlock>
+                                </apex:form>
+                            </apex:page>
+                            ```
+                        </script>
+                    </section>
+                    <section>
+                        <h3>JavaScript in Visualforce</h3>
+
+                        <ul>
+                            <li class="fragment">Load any JS Library</li>
+                            <li class="fragment">Use either a public CDN or upload assets to Salesforce</li>
+                            <li class="fragment">JavaScript remoting or JSON Apex Controllers</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Apex Controller</h4>
+                        <pre><code>global with sharing class OppRemoter {
+    @RemoteAction
+    global static List&lt;Opportunity&gt; findAll() {
+        return [SELECT Id, Name FROM Opportunity];
+    }
+}</code></pre>
+
+                        <h4>JavaScript Remoting</h4>
+                        <pre><code>&lt;apex:page sidebar="false" showheader="false" controller="OppRemoter"&gt;
+    &lt;script&gt;
+        Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.OppRemoter.findAll}',
+                function(result, event) {
+                    console.log(result);
+                },
+                {escape: true}
+        );
+    &lt;/script&gt;
+&lt;/apex:page&gt;</code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Mobile Apps with Salesforce1</h3>
+
+                        <ul>
+                            <li class="fragment">Out-of-the-box Mobile UI for Salesforce</li>
+                            <li class="fragment">Automatic CRUD UI</li>
+                            <li class="fragment">Custom Views & Visualforce Pages</li>
+                        </ul>
+                    </section>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: "simple", // available themes are in /css/theme
+                transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
