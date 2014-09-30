@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 12&#58; Batch and Schedule
+title: Module 11&#58; Batch and Schedule
 ---
 In this module, you create and execute a batch process to send reminder emails to the conference speakers.
 
@@ -89,6 +89,6 @@ In this module, you create and execute a batch process to send reminder emails t
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
 <a href="Testing.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="next.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="Using-the-Salesforce1-Platform-APIs.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>

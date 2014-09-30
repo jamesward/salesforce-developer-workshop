@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 10&#58; Using the Salesforce1 Platform APIs
+title: Module 12&#58; Using the Salesforce1 Platform APIs
 ---
 In this module, you create an application that runs outside your Salesforce instance: it uses OAuth to authenticate with Salesforce, and the REST APIs to access Salesforce data.
 
@@ -177,7 +177,7 @@ You need Node.js to perform the exercises in this module. If you don't already h
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="Using-JavaScript-in-Visualforce-Pages.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="Testing.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="Batch-and-Schedule.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="next.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
