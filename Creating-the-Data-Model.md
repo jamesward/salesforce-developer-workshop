@@ -8,7 +8,7 @@ In this module, you create the custom objects that make up the data model for th
 
 ## Step 1: Create the Conference Session Object
 
-1. Login into your Developer Edition account
+1. [Login into your Developer Edition account](https://login.salesforce.com)
 
 1. Click the **Setup** link (upper right corner)
 
