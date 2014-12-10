@@ -6,10 +6,6 @@ In this module, you create an application that runs outside your Salesforce inst
 
 ![](images/api.jpg)
 
-## Requirement
-
-You need Node.js to perform the exercises in this module. If you don't already have Node.js installed on your system, you can install it [here](http://nodejs.org/).
-
 > This module is recommended but optional. If you are not interested in building custom applications (applications hosted outside your Salesforce instance), you can move to Module 11.
 
 ## Step 1: Create a Connected App
@@ -49,23 +45,9 @@ You need Node.js to perform the exercises in this module. If you don't already h
 
 ## Step 3: Start the Node.js server
 
-
-1. Open Terminal (Mac) or a Command prompt (Windows)
-
-1. Navigate (cd) to the **salesforce-developer-workshop** (or salesforce-developer-workshop-master) directory
-
-1. Install the Node.js server dependencies:
-
-    ```
-    npm install
-    ```
-
-1. Start the server:  
-
-    ```
-    node server
-    ```
-
+1. Run the gulp build
+    - Windows: In your project directory run `gulp.exe` command either by double-clicking on it or from a command prompt
+    - Linux, Mac, Cygwin: From a terminal / command line, in your project directory run: `./gulp`
 1. Test the application. Open a browser and access the following URL:
 
     ```
